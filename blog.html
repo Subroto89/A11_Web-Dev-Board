@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+
+   
+    <!-- google font CDN link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <!-- daisyUI CDN Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Internal CSS -->
+    <style>
+        body{
+        font-family: "Poppins", sans-serif;
+     }
+    </style> 
+    
+</head>
+<body class="bg-slate-100 pt-1 pb-4">
+    <!-- --------------------------------------------Nav Bar Section---------------------------------- -->
+    <header>
+        <nav class="navbar justify-between w-10/12 mx-auto shadow bg-white rounded-lg">
+            <div class="flex items-center justify-center w-min gap-2">
+                <img src="./assets/logo.png" alt="logo" class="ml-8">
+                <h1 class="text-3xl">Dev<span class="font-bold">Board</span></h1>
+            </div>
+            <button id="btn-back-desk" class="btn btn-primary h-2 w-36" onClick="window.location.href='index.html'">
+                Back to Desk
+            </button>
+            
+        </nav>
+    </header> 
+
+    <!-- ---------------------------------------------Question and Answer Section---------------------- -->
+    <main class="w-10/12 mx-auto">
+        <h1 class="text-center text-2xl font-bold mt-4 mb-4">Blogs</h1>
+        <section class="space-y-4">
+            <!-- -----------Question-1------------ -->
+            <div>
+                <h2 class="p-4 rounded-t-lg bg-white text-md text-gray-700 font-bold">
+                    Question-1: What are the different ways to select an element in the DOM?
+                </h2>
+                <hr class="border-dashed border-1">
+                <p class="p-4 rounded-b-lg bg-white text-md text-gray-600">
+                    There are multiple ways to select an element in the DOM. Mostly used ways are ... 
+                    <ul style="list-style: square;" class="p-4 pl-10 pt-1 bg-white text-md text-gray-600">
+                        <li class="mb-1"><code class="text-lg font-semibold">getElementById()</code>: It gives only one element which holds the particular id given in the parentheses.</li>
+                        <li class="mb-1"><code class="text-lg font-semibold">getElementsByClassName()</code>: It gives an HTMLCollection of element that holds the class name given in the parentheses.</li>
+                        <li class="mb-1"><code class="text-lg font-semibold">getElementsByTagName()</code>: In this case, it also gives an HTMLCollection of elements based on the tag name given in the parentheses.</li>
+                        <li class="mb-1"><code class="text-lg font-semibold">querySelector()</code>: It gives only the first element based on the selector. Selector may be class name, id, tag name or attribute.</li>
+                        <li class="mb-1"><code class="text-lg font-semibold">querySelectorAll()</code>: It gives a NodeList of element based on the selector given in the parentheses.</li>
+                        <li class="mb-1"><code class="text-lg font-semibold">getElementsByName()</code>: Usefull for selecting form elements. It gives a NodeList of elements based on the name attribute value. </li>
+                    </ul>                                  
+                </p>
+            </div>
+
+            <!-- -----------Question-2------------ -->
+            <div>
+                <h2 class="p-4 rounded-t-lg bg-white text-md text-gray-700 font-bold">
+                    Question-2: What is the difference between innerHTML, innerText, and textContent ?
+                </h2>
+                <hr class="border-dashed border-1">
+                <p class="p-4 rounded-b-lg bg-white text-md text-gray-600">
+                    innerHTML, innerText and textContent are widely used property in the DOM for getting or setting
+                    elements or text.<br>
+                    <code class="text-lg font-semibold">innerHTML</code>: It is used to get or set the HTML content of an element. It returns the text along with the tags.<br>
+                    <code class="text-lg font-semibold">innerText</code>: It is used to get or set the visible text content of an element. <code>innerText</code> ignors HTML tags but takes CSS styles into account.<br>
+                    <code class="text-lg font-semibold">textContent</code>: Using <code>textContent</code>, we can get or set text content of an element including the text of all its child elements . It
+                    ignores html tags and CSS styles.
+                </p>
+            </div>
+
+            <!-- -----------Question-3------------ -->
+            <div>
+                <h2 class="p-4 rounded-t-lg bg-white text-md text-gray-700 font-bold">
+                    Question-3: What is event delegation in the DOM?
+                </h2>
+                <hr class="border-dashed border-1">
+                <p class="p-4 rounded-b-lg bg-white text-md text-gray-600">
+                   Event delegation is a JavaScript technique that allows a parent element to listen for events on it's child elements.
+                   It is used where there are multiple childs elements within a parent element. Instead of attaching an <code>addEventListener()</code> 
+                   or function to each child, the <code>addEventListener()</code> is attached to the parent element. When an event 
+                   occurs on a child, the event propagates up to the parent and the parent element listen the event using 
+                   event.target property then the event related functioning works for that particular child that clicked
+                   on. So, we can say, event delegation is the process of giving the event handling responsibility to a parent element.
+                   So that, parent can decide which child element will trigger an event when it occurs.
+                </p>
+            </div>
+
+            <!-- -----------Question-4------------ -->
+            <div>
+                <h2 class="p-4 rounded-t-lg bg-white text-md text-gray-700 font-bold">
+                    Question-4: What is event bubbling in the DOM?
+                </h2>
+                <hr class="border-dashed border-1">
+                <p class="p-4 rounded-b-lg bg-white text-md text-gray-600">
+                   Event bubbling is the event propagation concept in the DOM event model. When an event is occured on a child 
+                   element, it propagates through the DOM tree toward it's parent then to its grandparent and so on. Thus it traverses
+                   through the DOM tree untill it reaches the root element(document).
+
+                </p>
+            </div>
+
+            <!-- -----------Question-5------------ -->
+            <div>
+                <h2 class="p-4 rounded-t-lg bg-white text-md text-gray-700 font-bold">
+                    Question-5: How do you create, add, and remove elements using JavaScript?
+                </h2>
+                <hr class="border-dashed border-1">
+                <p class="p-4 rounded-b-lg bg-white text-md text-gray-600">
+                    In JavaScript, creating, addition and removing elements can be done dynamically in a sequential steps.<br><br>
+                    <span class="text-md font-semibold mb-1">Creating Element:</span> Using <code>createElement()</code> method, element is created then text is set into the elemenet by the <code>textContent</code> property.<br>
+                    <span class="text-md font-semibold mb-1">Adding element:</span> <code>appendChild()</code> is used to add the created new element as its parents last child.<br>
+                    <span class="text-md font-semibold mb-1">Removing element:</span> To remove an element <code>removeChild()</code> is used. <br><br>
+                    <span class="text-md font-semibold">The total procedure is below ...</span><br>
+                    
+                    <span class="block text-md text-sm font-semibold mt-6">Adding an element.</span>
+                    <em>//Target the parent element.</em><br>
+                    <code>const parentElement = document.getElementById('myId');</code>
+                    
+                    <em class="block text-md mt-2">//Creating Element</em>
+                    <code>const childElement = document.createElement('p');</code><br>
+                    <code>childElement.textContent = "This is the text.";</code>
+                   
+                    <em class="block text-md mt-2">//Adding the newly created element into the parent element.</em>
+                    <code>parentElement.appendChild(childElement);</code>
+                    
+                    <span class="block text-md text-sm font-semibold mt-6">Removing the element.</span>
+                    <code>parentElement.removeChild(childElement);</code>
+
+                </p>
+            </div>
+        </section>
+    </main>
+  
+   <script src="./scripts/utilities.js"></script>
+   <script src="./scripts/main.js"></script>
+</body>
+</html>
